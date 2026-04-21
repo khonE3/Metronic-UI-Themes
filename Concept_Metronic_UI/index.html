@@ -1,0 +1,1937 @@
+<!DOCTYPE html>
+<html lang="th" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Metronic UI Reference - สรุปเนื้อหาและตัวอย่างโค้ดครบถ้วนของ Metronic Admin Dashboard Theme">
+    <title>Metronic UI Reference | สรุปเนื้อหาครบถ้วน</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Highlight.js for Code Syntax -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Metronic UI Reference</div>
+    </div>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <a href="index.html" class="d-flex align-items-center gap-2">
+                    <img alt="Logo" src="logo-small.svg" style="height: 28px;" />
+                </a>
+                <div class="logo-text ms-2">
+                    <span class="logo-title">Metronic</span>
+                    <span class="logo-subtitle">UI Reference</span>
+                </div>
+            </div>
+            <button class="sidebar-close" id="sidebarClose">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <div class="nav-section-title">เริ่มต้น</div>
+                <a href="#overview" class="nav-link active" data-section="overview">
+                    <i class="bi bi-house-door"></i>
+                    <span>ภาพรวม Metronic</span>
+                </a>
+                <a href="#color-system" class="nav-link" data-section="color-system">
+                    <i class="bi bi-palette"></i>
+                    <span>ระบบสี (Color System)</span>
+                </a>
+                <a href="#typography" class="nav-link" data-section="typography">
+                    <i class="bi bi-type"></i>
+                    <span>Typography</span>
+                </a>
+                <a href="#spacing" class="nav-link" data-section="spacing">
+                    <i class="bi bi-arrows-angle-expand"></i>
+                    <span>Spacing & Grid</span>
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-section-title">Components</div>
+                <a href="#buttons" class="nav-link" data-section="buttons">
+                    <i class="bi bi-hand-index"></i>
+                    <span>Buttons</span>
+                </a>
+                <a href="#cards" class="nav-link" data-section="cards">
+                    <i class="bi bi-card-heading"></i>
+                    <span>Cards</span>
+                </a>
+                <a href="#forms" class="nav-link" data-section="forms">
+                    <i class="bi bi-input-cursor-text"></i>
+                    <span>Forms & Inputs</span>
+                </a>
+                <a href="#tables" class="nav-link" data-section="tables">
+                    <i class="bi bi-table"></i>
+                    <span>Tables</span>
+                </a>
+                <a href="#badges" class="nav-link" data-section="badges">
+                    <i class="bi bi-tag"></i>
+                    <span>Badges & Indicators</span>
+                </a>
+                <a href="#modals" class="nav-link" data-section="modals">
+                    <i class="bi bi-window-stack"></i>
+                    <span>Modals & Drawers</span>
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-section-title">Layout</div>
+                <a href="#layout-system" class="nav-link" data-section="layout-system">
+                    <i class="bi bi-layout-sidebar-inset"></i>
+                    <span>Layout System</span>
+                </a>
+                <a href="#sidebar-nav" class="nav-link" data-section="sidebar-nav">
+                    <i class="bi bi-list"></i>
+                    <span>Sidebar & Navigation</span>
+                </a>
+                <a href="#header-toolbar" class="nav-link" data-section="header-toolbar">
+                    <i class="bi bi-window"></i>
+                    <span>Header & Toolbar</span>
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-section-title">Advanced</div>
+                <a href="#widgets" class="nav-link" data-section="widgets">
+                    <i class="bi bi-speedometer2"></i>
+                    <span>Widgets & Charts</span>
+                </a>
+                <a href="#dark-mode" class="nav-link" data-section="dark-mode">
+                    <i class="bi bi-moon-stars"></i>
+                    <span>Dark Mode</span>
+                </a>
+                <a href="#utilities" class="nav-link" data-section="utilities">
+                    <i class="bi bi-tools"></i>
+                    <span>Utilities & Helpers</span>
+                </a>
+                <a href="#sass-structure" class="nav-link" data-section="sass-structure">
+                    <i class="bi bi-filetype-scss"></i>
+                    <span>SASS Structure</span>
+                </a>
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="version-badge">v8.3.1</div>
+            <span class="sidebar-footer-text">Metronic by Keenthemes</span>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <!-- Header -->
+        <header class="main-header">
+            <div class="header-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="bi bi-list"></i>
+                </button>
+                <div class="breadcrumb-nav">
+                    <span class="breadcrumb-item">Metronic UI</span>
+                    <i class="bi bi-chevron-right breadcrumb-separator"></i>
+                    <span class="breadcrumb-item active" id="breadcrumbActive">ภาพรวม</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="ค้นหา components..." id="searchInput">
+                </div>
+                <button class="theme-toggle" id="themeToggle" title="สลับ Dark Mode">
+                    <i class="bi bi-moon-fill" id="themeIcon"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="content-wrapper">
+
+            <!-- ===================== SECTION: OVERVIEW ===================== -->
+            <section class="content-section active" id="overview">
+                <div class="section-hero">
+                    <div class="hero-badge">Admin Dashboard Theme</div>
+                    <h1 class="hero-title">Metronic UI <span class="text-gradient">Reference</span></h1>
+                    <p class="hero-description">
+                        สรุปเนื้อหาครบถ้วนของ Metronic Admin Dashboard Theme — ระบบ Design System ที่ใช้ Bootstrap 5 พร้อม Custom Components, 
+                        SASS Variables, Dark Mode และ Layout System ที่ยืดหยุ่นสูง
+                    </p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="bi bi-collection"></i></div>
+                        <div class="stat-value">60+</div>
+                        <div class="stat-label">Custom Components</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="bi bi-palette2"></i></div>
+                        <div class="stat-value">8</div>
+                        <div class="stat-label">Contextual Colors</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="bi bi-layout-text-window-reverse"></i></div>
+                        <div class="stat-value">16</div>
+                        <div class="stat-label">Dashboard Layouts</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="bi bi-moon-stars"></i></div>
+                        <div class="stat-value">2</div>
+                        <div class="stat-label">Theme Modes</div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="bi bi-info-circle"></i>
+                        <h3>Metronic คืออะไร?</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <p>
+                            <strong>Metronic</strong> คือ Admin Dashboard Theme ระดับ Premium จาก Keenthemes ที่รองรับหลาย Framework ได้แก่ 
+                            HTML/Bootstrap, Vue.js, React, Angular, ASP.NET Core, Laravel, Django, Flask และอื่นๆ
+                        </p>
+                        <p>ฟีเจอร์เด่น:</p>
+                        <ul>
+                            <li>ใช้ <strong>Bootstrap 5</strong> เป็น Base พร้อม Custom Extensions มากมาย</li>
+                            <li>ระบบ <strong>SASS Variables</strong> กว่า 1,200+ ตัวแปรที่ปรับแต่งได้</li>
+                            <li>รองรับ <strong>Dark Mode</strong> ด้วย CSS Variables และ <code>data-bs-theme</code></li>
+                            <li>มากกว่า <strong>16 Dashboard Layouts</strong> สำหรับหลากหลาย Use Cases</li>
+                            <li>ระบบ <strong>Component</strong> ที่ครบถ้วน: Cards, Tables, Forms, Charts, Widgets</li>
+                            <li>โครงสร้าง <strong>Layout</strong> ที่ยืดหยุ่น: Sidebar, Header, Toolbar, Content</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-card mt-lg">
+                    <div class="info-card-header">
+                        <i class="bi bi-folder2-open"></i>
+                        <h3>โครงสร้างไฟล์ (File Structure)</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <pre><code class="language-plaintext">metronic_html_v8.3.1_demo1/
+├── demo1/
+│   ├── index.html              # หน้า Dashboard หลัก
+│   ├── landing.html            # Landing Page
+│   ├── assets/
+│   │   ├── css/
+│   │   │   └── style.bundle.css  # CSS ที่ compile แล้ว
+│   │   ├── js/                   # JavaScript files
+│   │   ├── media/                # รูปภาพและ media
+│   │   └── plugins/              # Third-party plugins
+│   ├── src/
+│   │   ├── sass/
+│   │   │   ├── components/       # SASS Components (60+ ไฟล์)
+│   │   │   │   ├── _variables.scss    # 1,274 lines ของ variables
+│   │   │   │   ├── _root.scss         # CSS Custom Properties
+│   │   │   │   ├── _card.scss         # Card Component
+│   │   │   │   ├── _buttons.scss      # Buttons
+│   │   │   │   └── ...
+│   │   │   ├── layout/           # Layout SASS
+│   │   │   └── base/             # Base SASS mixins & functions
+│   │   └── js/                   # Source JavaScript
+│   ├── apps/                     # Application pages
+│   ├── dashboards/               # 16 Dashboard variations
+│   ├── pages/                    # Static pages
+│   ├── widgets/                  # Widget showcase
+│   └── authentication/           # Auth pages
+└── tools/                        # Build tools</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SECTION: COLOR SYSTEM ===================== -->
+            <section class="content-section" id="color-system">
+                <div class="section-header">
+                    <h2><i class="bi bi-palette"></i> ระบบสี (Color System)</h2>
+                    <p>Metronic ใช้ระบบสี Contextual Colors ที่มี 4 states ต่อสี: Default, Active, Light, Clarity</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="bi bi-paint-bucket"></i>
+                        <h3>Contextual Colors (8 สี)</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <div class="color-palette">
+                            <div class="color-swatch" style="--swatch-color:#1B84FF">
+                                <div class="swatch-preview"></div>
+                                <div class="swatch-info">
+                                    <span class="swatch-name">Primary</span>
+                                    <span class="swatch-hex">#1B84FF</span>
+                                </div>
+                            </div>
+                            <div class="color-swatch" style="--swatch-color:#F1F1F4">
+                                <div class="swatch-preview"></div>
+                                <div class="swatch-info">
+                                    <span class="swatch-name">Secondary</span>
+                                    <span class="swatch-hex">#F1F1F4</span>
+                                </div>
+                            </div>
+                            <div class="color-swatch" style="--swatch-color:#17C653">
+                                <div class="swatch-preview"></div>
+                                <div class="swatch-info">
+                                    <span class="swatch-name">Success</span>
+                                    <span class="swatch-hex">#17C653</span>
+                                </div>
+                            </div>
+                            <div class="color-swatch" style="--swatch-color:#7239EA">
+                                <div class="swatch-preview"></div>
+                                <div class="swatch-info">
+                                    <span class="swatch-name">Info</span>
+                                    <span class="swatch-hex">#7239EA</span>
+                                </div>
+                            </div>
+                            <div class="color-swatch" style="--swatch-color:#F6C000">
+                                <div class="swatch-preview"></div>
+                                <div class="swatch-info">
+                                    <span class="swatch-name">Warning</span>
+                                    <span class="swatch-hex">#F6C000</span>
+                                </div>
+                            </div>
+                            <div class="color-swatch" style="--swatch-color:#F8285A">
+                                <div class="swatch-preview"></div>
+                                <div class="swatch-info">
+                                    <span class="swatch-name">Danger</span>
+                                    <span class="swatch-hex">#F8285A</span>
+                                </div>
+                            </div>
+                            <div class="color-swatch" style="--swatch-color:#1E2129">
+                                <div class="swatch-preview"></div>
+                                <div class="swatch-info">
+                                    <span class="swatch-name">Dark</span>
+                                    <span class="swatch-hex">#1E2129</span>
+                                </div>
+                            </div>
+                            <div class="color-swatch" style="--swatch-color:#F9F9F9">
+                                <div class="swatch-preview"></div>
+                                <div class="swatch-info">
+                                    <span class="swatch-name">Light</span>
+                                    <span class="swatch-hex">#F9F9F9</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card mt-lg">
+                    <div class="info-card-header">
+                        <i class="bi bi-code-slash"></i>
+                        <h3>SASS Variables - Color Definition</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <pre><code class="language-scss">// ===========================
+// Metronic Contextual Colors
+// ===========================
+
+// Primary colors (แต่ละสีมี 4 states)
+$primary:         #1B84FF !default;  // สีหลัก
+$primary-active:  #056EE9 !default;  // สี hover/active
+$primary-light:   #E9F3FF !default;  // พื้นหลังอ่อน
+$primary-clarity: rgba(#1B84FF, 0.2) !default;  // โปร่งแสง
+
+// Success colors
+$success:         #17C653 !default;
+$success-active:  #04B440 !default;
+$success-light:   #DFFFEA !default;
+$success-clarity: rgba(#17C653, 0.2) !default;
+
+// Danger colors
+$danger:          #F8285A !default;
+$danger-active:   #D81A48 !default;
+$danger-light:    #FFEEF3 !default;
+$danger-clarity:  rgba(#F8285A, 0.2) !default;
+
+// Info colors
+$info:            #7239EA !default;
+$info-active:     #5014D0 !default;
+$info-light:      #F8F5FF !default;
+$info-clarity:    rgba(#7239EA, 0.2) !default;
+
+// Warning colors
+$warning:         #F6C000 !default;
+$warning-active:  #DEAD00 !default;
+$warning-light:   #FFF8DD !default;
+$warning-clarity: rgba(#F6C000, 0.2) !default;
+
+// Theme Color Map
+$theme-colors: (
+    "light":     $light,
+    "primary":   $primary,
+    "secondary": $secondary,
+    "success":   $success,
+    "info":      $info,
+    "warning":   $warning,
+    "danger":    $danger,
+    "dark":      $dark
+) !default;</code></pre>
+                    </div>
+                </div>
+
+                <div class="info-card mt-lg">
+                    <div class="info-card-header">
+                        <i class="bi bi-grid-3x3"></i>
+                        <h3>Gray Scale System (9 ระดับ)</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <div class="gray-scale">
+                            <div class="gray-item" style="--gray-color:#F9F9F9"><span>100</span><small>#F9F9F9</small></div>
+                            <div class="gray-item" style="--gray-color:#F1F1F4"><span>200</span><small>#F1F1F4</small></div>
+                            <div class="gray-item" style="--gray-color:#DBDFE9"><span>300</span><small>#DBDFE9</small></div>
+                            <div class="gray-item" style="--gray-color:#C4CADA"><span>400</span><small>#C4CADA</small></div>
+                            <div class="gray-item" style="--gray-color:#99A1B7"><span>500</span><small>#99A1B7</small></div>
+                            <div class="gray-item" style="--gray-color:#78829D"><span>600</span><small>#78829D</small></div>
+                            <div class="gray-item" style="--gray-color:#4B5675"><span>700</span><small>#4B5675</small></div>
+                            <div class="gray-item" style="--gray-color:#252F4A"><span>800</span><small>#252F4A</small></div>
+                            <div class="gray-item" style="--gray-color:#071437"><span>900</span><small>#071437</small></div>
+                        </div>
+                        <pre><code class="language-scss">// Bootstrap grey colors (ปรับแต่งโดย Metronic)
+$gray-100: #F9F9F9 !default;
+$gray-200: #F1F1F4 !default;
+$gray-300: #DBDFE9 !default;
+$gray-400: #C4CADA !default;
+$gray-500: #99A1B7 !default; // ใช้เป็น $text-muted
+$gray-600: #78829D !default;
+$gray-700: #4B5675 !default;
+$gray-800: #252F4A !default;
+$gray-900: #071437 !default; // ใช้เป็น body color</code></pre>
+                    </div>
+                </div>
+
+                <div class="info-card mt-lg">
+                    <div class="info-card-header">
+                        <i class="bi bi-code-square"></i>
+                        <h3>CSS Variables ที่ Generate อัตโนมัติ</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <pre><code class="language-scss">// _root.scss - Generate CSS Custom Properties
+
+:root {
+    // สร้าง CSS variables จาก SASS maps อัตโนมัติ
+    @each $name, $value in $theme-colors {
+        --bs-#{$name}: #{$value};
+    }
+
+    @each $name, $value in $theme-active-colors {
+        --bs-#{$name}-active: #{$value};
+    }
+
+    @each $name, $value in $theme-light-colors {
+        --bs-#{$name}-light: #{$value};
+    }
+}
+
+// ผลลัพธ์ CSS ที่ได้:
+// --bs-primary: #1B84FF;
+// --bs-primary-active: #056EE9;
+// --bs-primary-light: #E9F3FF;
+// --bs-success: #17C653;
+// ...</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SECTION: TYPOGRAPHY ===================== -->
+            <section class="content-section" id="typography">
+                <div class="section-header">
+                    <h2><i class="bi bi-type"></i> Typography</h2>
+                    <p>Metronic ใช้ Inter เป็น Font หลัก พร้อมระบบ Font Size ที่ครอบคลุมถึง 7x</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="bi bi-fonts"></i>
+                        <h3>Font Family & Weights</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <div class="typography-demo">
+                            <div class="type-sample" style="font-weight:300">Light 300 — The quick brown fox</div>
+                            <div class="type-sample" style="font-weight:400">Regular 400 — The quick brown fox</div>
+                            <div class="type-sample" style="font-weight:500">Semibold 500 — The quick brown fox</div>
+                            <div class="type-sample" style="font-weight:600">Bold 600 — The quick brown fox</div>
+                            <div class="type-sample" style="font-weight:700">Bolder 700 — The quick brown fox</div>
+                        </div>
+                        <pre><code class="language-scss">// Font Family
+$font-family-sans-serif: Inter, Helvetica, "sans-serif" !default;
+
+// Font Weights
+$font-weight-lighter:  lighter !default;
+$font-weight-light:    300 !default;
+$font-weight-normal:   400 !default;
+$font-weight-semibold: 500 !default;  // ค่าเริ่มต้น labels
+$font-weight-bold:     600 !default;  // ค่าเริ่มต้น headings
+$font-weight-bolder:   700 !default;</code></pre>
+                    </div>
+                </div>
+
+                <div class="info-card mt-lg">
+                    <div class="info-card-header">
+                        <i class="bi bi-text-paragraph"></i>
+                        <h3>Heading Sizes & Extended Font Sizes</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <div class="heading-demo">
+                            <div class="heading-item"><h1 style="margin:0">H1 Heading (22.75px)</h1></div>
+                            <div class="heading-item"><h2 style="margin:0">H2 Heading (19.50px)</h2></div>
+                            <div class="heading-item"><h3 style="margin:0">H3 Heading (17.55px)</h3></div>
+                            <div class="heading-item"><h4 style="margin:0">H4 Heading (16.25px)</h4></div>
+                            <div class="heading-item"><h5 style="margin:0">H5 Heading (14.95px)</h5></div>
+                            <div class="heading-item"><h6 style="margin:0">H6 Heading (13.97px)</h6></div>
+                        </div>
+                        <pre><code class="language-scss">// Heading Sizes
+$h1-font-size: $font-size-base * 1.75;   // 22.75px
+$h2-font-size: $font-size-base * 1.5;    // 19.50px
+$h3-font-size: $font-size-base * 1.35;   // 17.55px
+$h4-font-size: $font-size-base * 1.25;   // 16.25px
+$h5-font-size: $font-size-base * 1.15;   // 14.95px
+$h6-font-size: $font-size-base * 1.075;  // 13.97px
+
+$headings-font-weight: 600 !default;
+$headings-color:       $gray-900 !default;
+$headings-line-height: 1.2 !default;
+
+// Extended Font Sizes (Metronic Custom)
+$font-sizes: (
+    1: $h1-font-size,    // 22.75px
+    2: $h2-font-size,    // 19.50px
+    // ...
+    2x:  $font-size-base * 2,     // 26px
+    2qx: $font-size-base * 2.25,  // 29.25px
+    3x:  $font-size-base * 3,     // 39px
+    4x:  $font-size-base * 4,     // 52px
+    5x:  $font-size-base * 5,     // 65px
+    // ... ไปจนถึง 7tx
+);</code></pre>
+                    </div>
+                </div>
+
+                <div class="info-card mt-lg">
+                    <div class="info-card-header">
+                        <i class="bi bi-code-slash"></i>
+                        <h3>การใช้งาน Typography Classes</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <pre><code class="language-html">&lt;!-- Font Size Classes --&gt;
+&lt;p class="fs-1"&gt;Font Size 1 (22.75px)&lt;/p&gt;
+&lt;p class="fs-6"&gt;Font Size 6 (13.97px)&lt;/p&gt;
+&lt;p class="fs-2x"&gt;Font Size 2x (26px)&lt;/p&gt;
+&lt;p class="fs-3hx"&gt;Font Size 3hx (45.5px)&lt;/p&gt;
+
+&lt;!-- Font Weight Classes --&gt;
+&lt;span class="fw-light"&gt;Light (300)&lt;/span&gt;
+&lt;span class="fw-semibold"&gt;Semibold (500)&lt;/span&gt;
+&lt;span class="fw-bold"&gt;Bold (600)&lt;/span&gt;
+&lt;span class="fw-bolder"&gt;Bolder (700)&lt;/span&gt;
+
+&lt;!-- Text Color Classes --&gt;
+&lt;span class="text-primary"&gt;Primary Text&lt;/span&gt;
+&lt;span class="text-muted"&gt;Muted Text&lt;/span&gt;
+&lt;span class="text-gray-600"&gt;Gray 600&lt;/span&gt;
+&lt;span class="text-gray-800"&gt;Gray 800&lt;/span&gt;
+
+&lt;!-- Line Height Classes --&gt;
+&lt;p class="lh-1"&gt;Line Height 1&lt;/p&gt;
+&lt;p class="lh-sm"&gt;Line Height SM (1.25)&lt;/p&gt;
+&lt;p class="lh-lg"&gt;Line Height LG (1.75)&lt;/p&gt;
+&lt;p class="lh-xl"&gt;Line Height XL (2.0)&lt;/p&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SECTION: SPACING & GRID ===================== -->
+            <section class="content-section" id="spacing">
+                <div class="section-header">
+                    <h2><i class="bi bi-arrows-angle-expand"></i> Spacing & Grid</h2>
+                    <p>Metronic ขยาย Spacing ของ Bootstrap จาก 5 ระดับ เป็น 20 ระดับ (0-20)</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="bi bi-distribute-vertical"></i>
+                        <h3>Extended Spacing Scale</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <div class="spacing-demo">
+                            <div class="spacing-item"><div class="spacing-bar" style="width:3.5px"></div><span>1: 3.5px</span></div>
+                            <div class="spacing-item"><div class="spacing-bar" style="width:7px"></div><span>2: 7px</span></div>
+                            <div class="spacing-item"><div class="spacing-bar" style="width:10.5px"></div><span>3: 10.5px</span></div>
+                            <div class="spacing-item"><div class="spacing-bar" style="width:14px"></div><span>4: 14px</span></div>
+                            <div class="spacing-item"><div class="spacing-bar" style="width:17.5px"></div><span>5: 17.5px</span></div>
+                            <div class="spacing-item"><div class="spacing-bar" style="width:28px"></div><span>8: 28px</span></div>
+                            <div class="spacing-item"><div class="spacing-bar" style="width:35px"></div><span>10: 35px</span></div>
+                            <div class="spacing-item"><div class="spacing-bar" style="width:49px"></div><span>14: 49px</span></div>
+                            <div class="spacing-item"><div class="spacing-bar" style="width:69px"></div><span>20: 69px</span></div>
+                        </div>
+                        <pre><code class="language-scss">// Extended Spacers (Bootstrap default = 0-5)
+$spacer: 1rem !default; // ~14px
+
+$spacers: (
+    0:  0,
+    1:  ($spacer * .25),    // 3.5px
+    2:  ($spacer * .5),     // 7px
+    3:  ($spacer * .75),    // 10.5px
+    4:  ($spacer * 1),      // 14px
+    5:  ($spacer * 1.25),   // 17.5px
+    6:  ($spacer * 1.5),    // 21px
+    7:  ($spacer * 1.75),   // 24.5px
+    8:  ($spacer * 2),      // 28px
+    9:  ($spacer * 2.25),   // 31.5px
+    10: ($spacer * 2.5),    // 35px
+    // ... ต่อไปจนถึง 20
+    20: ($spacer * 5),      // 69px
+);
+
+// ใช้งาน: p-1, m-5, px-10, mb-20 เป็นต้น</code></pre>
+                    </div>
+                </div>
+
+                <div class="info-card mt-lg">
+                    <div class="info-card-header">
+                        <i class="bi bi-grid"></i>
+                        <h3>Grid Breakpoints & Containers</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <div class="responsive-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Breakpoint</th>
+                                        <th>Class Infix</th>
+                                        <th>Min Width</th>
+                                        <th>Container Max</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>X-Small</td><td><code>xs</code></td><td>0</td><td>—</td></tr>
+                                    <tr><td>Small</td><td><code>sm</code></td><td>576px</td><td>540px</td></tr>
+                                    <tr><td>Medium</td><td><code>md</code></td><td>768px</td><td>720px</td></tr>
+                                    <tr><td>Large</td><td><code>lg</code></td><td>992px</td><td>960px</td></tr>
+                                    <tr><td>X-Large</td><td><code>xl</code></td><td>1200px</td><td>1140px</td></tr>
+                                    <tr><td>XX-Large</td><td><code>xxl</code></td><td>1400px</td><td>1320px</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <pre><code class="language-scss">$grid-breakpoints: (
+    xs:  0,
+    sm:  576px,
+    md:  768px,
+    lg:  992px,
+    xl:  1200px,
+    xxl: 1400px
+) !default;
+
+$container-max-widths: (
+    sm:  540px,
+    md:  720px,
+    lg:  960px,
+    xl:  1140px,
+    xxl: 1320px
+) !default;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SECTION: BUTTONS ===================== -->
+            <section class="content-section" id="buttons">
+                <div class="section-header">
+                    <h2><i class="bi bi-hand-index"></i> Buttons</h2>
+                    <p>Metronic มี Button Styles ที่หลากหลาย: Solid, Light, Outline, Flush, Link และ Icon Buttons</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="bi bi-cursor"></i>
+                        <h3>Button Variants</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <div class="demo-buttons">
+                            <button class="btn-demo btn-primary-demo">Primary</button>
+                            <button class="btn-demo btn-success-demo">Success</button>
+                            <button class="btn-demo btn-danger-demo">Danger</button>
+                            <button class="btn-demo btn-warning-demo">Warning</button>
+                            <button class="btn-demo btn-info-demo">Info</button>
+                            <button class="btn-demo btn-dark-demo">Dark</button>
+                        </div>
+                        <div class="demo-buttons mt-md">
+                            <button class="btn-demo btn-light-primary">Light Primary</button>
+                            <button class="btn-demo btn-light-success">Light Success</button>
+                            <button class="btn-demo btn-light-danger">Light Danger</button>
+                            <button class="btn-demo btn-light-info">Light Info</button>
+                        </div>
+                        <pre><code class="language-html">&lt;!-- Solid Buttons --&gt;
+&lt;button class="btn btn-primary"&gt;Primary&lt;/button&gt;
+&lt;button class="btn btn-success"&gt;Success&lt;/button&gt;
+&lt;button class="btn btn-danger"&gt;Danger&lt;/button&gt;
+&lt;button class="btn btn-info"&gt;Info&lt;/button&gt;
+
+&lt;!-- Light Buttons (Metronic Custom) --&gt;
+&lt;button class="btn btn-light-primary"&gt;Light Primary&lt;/button&gt;
+&lt;button class="btn btn-light-success"&gt;Light Success&lt;/button&gt;
+&lt;button class="btn btn-light-danger"&gt;Light Danger&lt;/button&gt;
+
+&lt;!-- Button Sizes --&gt;
+&lt;button class="btn btn-primary btn-sm"&gt;Small&lt;/button&gt;
+&lt;button class="btn btn-primary"&gt;Default&lt;/button&gt;
+&lt;button class="btn btn-primary btn-lg"&gt;Large&lt;/button&gt;
+
+&lt;!-- Icon Button --&gt;
+&lt;button class="btn btn-icon btn-primary"&gt;
+    &lt;i class="bi bi-plus"&gt;&lt;/i&gt;
+&lt;/button&gt;
+
+&lt;!-- Flush Button (No Background) --&gt;
+&lt;button class="btn btn-flush"&gt;Flush Button&lt;/button&gt;
+
+&lt;!-- Active/Color State Buttons --&gt;
+&lt;button class="btn btn-active-primary"&gt;Active Primary&lt;/button&gt;
+&lt;button class="btn btn-active-light-primary"&gt;Active Light&lt;/button&gt;</code></pre>
+                    </div>
+                </div>
+
+                <div class="info-card mt-lg">
+                    <div class="info-card-header">
+                        <i class="bi bi-sliders"></i>
+                        <h3>Button SASS Variables</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <pre><code class="language-scss">// Button Padding
+$btn-padding-y:    .775rem !default;
+$btn-padding-x:    1.5rem !default;
+$btn-font-weight:  500 !default;   // semibold
+
+// Small & Large
+$btn-padding-y-sm: .55rem !default;
+$btn-padding-x-sm: 1rem !default;
+$btn-padding-y-lg: 1rem !default;
+$btn-padding-x-lg: 1.75rem !default;
+
+// Border Radius
+$btn-border-radius:    .475rem !default;
+$btn-border-radius-sm: .425rem !default;
+$btn-border-radius-lg: .625rem !default;
+
+// Shadow & Focus
+$btn-box-shadow:        none !default;
+$btn-focus-box-shadow:  none !default;
+$btn-active-box-shadow: none !default;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SECTION: CARDS ===================== -->
+            <section class="content-section" id="cards">
+                <div class="section-header">
+                    <h2><i class="bi bi-card-heading"></i> Cards</h2>
+                    <p>Card เป็น Component หลักของ Metronic สำหรับจัดกลุ่มเนื้อหา — มี Variants มากมาย</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="bi bi-card-list"></i>
+                        <h3>Card Variants Demo</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <div class="card-demo-grid">
+                            <div class="card-demo card-demo-default">
+                                <div class="card-demo-header">
+                                    <span class="card-demo-title">Default Card</span>
+                                    <span class="card-demo-toolbar"><i class="bi bi-three-dots-vertical"></i></span>
+                                </div>
+                                <div class="card-demo-body">Card content with shadow</div>
+                            </div>
+                            <div class="card-demo card-demo-bordered">
+                                <div class="card-demo-header">
+                                    <span class="card-demo-title">Bordered Card</span>
+                                    <span class="card-demo-toolbar"><i class="bi bi-three-dots-vertical"></i></span>
+                                </div>
+                                <div class="card-demo-body">Card with border</div>
+                            </div>
+                            <div class="card-demo card-demo-dashed">
+                                <div class="card-demo-header">
+                                    <span class="card-demo-title">Dashed Card</span>
+                                    <span class="card-demo-toolbar"><i class="bi bi-three-dots-vertical"></i></span>
+                                </div>
+                                <div class="card-demo-body">Card with dashed border</div>
+                            </div>
+                            <div class="card-demo card-demo-flush">
+                                <div class="card-demo-header" style="border:none">
+                                    <span class="card-demo-title">Flush Card</span>
+                                    <span class="card-demo-toolbar"><i class="bi bi-three-dots-vertical"></i></span>
+                                </div>
+                                <div class="card-demo-body">No header/footer borders</div>
+                            </div>
+                        </div>
+                        <pre><code class="language-html">&lt;!-- Default Card --&gt;
+&lt;div class="card"&gt;
+    &lt;div class="card-header"&gt;
+        &lt;h3 class="card-title"&gt;Card Title&lt;/h3&gt;
+        &lt;div class="card-toolbar"&gt;
+            &lt;button class="btn btn-sm btn-light"&gt;Action&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="card-body"&gt;Content here...&lt;/div&gt;
+    &lt;div class="card-footer"&gt;Footer&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Bordered Card --&gt;
+&lt;div class="card card-bordered"&gt;...&lt;/div&gt;
+
+&lt;!-- Dashed Card --&gt;
+&lt;div class="card card-dashed"&gt;...&lt;/div&gt;
+
+&lt;!-- Flush Card (no border on header/footer) --&gt;
+&lt;div class="card card-flush"&gt;...&lt;/div&gt;
+
+&lt;!-- Shadow Card --&gt;
+&lt;div class="card card-shadow"&gt;...&lt;/div&gt;
+
+&lt;!-- Stretch Card (fill container height) --&gt;
+&lt;div class="card card-stretch"&gt;...&lt;/div&gt;
+&lt;div class="card card-stretch-50"&gt;...&lt;/div&gt;
+
+&lt;!-- Reset/Borderless --&gt;
+&lt;div class="card card-reset"&gt;...&lt;/div&gt;
+&lt;div class="card card-borderless"&gt;...&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+
+                <div class="info-card mt-lg">
+                    <div class="info-card-header">
+                        <i class="bi bi-sliders"></i>
+                        <h3>Card SASS Variables</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <pre><code class="language-scss">// Card Configuration
+$card-box-shadow:      0px 0px 20px 0px rgba(76,87,125,0.02);
+$card-border-color:    $border-color;   // #F1F1F4
+$card-border-width:    1px;
+$card-border-style:    solid;
+$card-border-enabled:  false;  // ค่าเริ่มต้นใช้ shadow แทน border
+$card-border-radius:   .625rem;
+
+// Card Spacing
+$card-py: 2rem;       // padding-top/bottom
+$card-px: 2.25rem;    // padding-left/right
+
+// Card Header
+$card-header-py:     0.5rem;
+$card-header-height: 70px;
+
+// Card Utility Classes
+.card-p   { padding: $card-py $card-px; }
+.card-px  { padding-left: $card-px; padding-right: $card-px; }
+.card-py  { padding-top: $card-py; padding-bottom: $card-py; }
+.card-shadow  { box-shadow: var(--bs-card-box-shadow); }
+.card-rounded { border-radius: $card-border-radius; }</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SECTION: FORMS ===================== -->
+            <section class="content-section" id="forms">
+                <div class="section-header">
+                    <h2><i class="bi bi-input-cursor-text"></i> Forms & Inputs</h2>
+                    <p>Metronic มี 2 สไตล์ Input: Default (bordered) และ Solid — พร้อม Custom Switches & Checks</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="bi bi-ui-radios"></i>
+                        <h3>Form Controls</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <div class="form-demo">
+                            <div class="form-group-demo">
+                                <label class="form-label-demo">Default Input</label>
+                                <input type="text" class="form-input-demo" placeholder="Enter text...">
+                            </div>
+                            <div class="form-group-demo">
+                                <label class="form-label-demo">Solid Input</label>
+                                <input type="text" class="form-input-demo form-input-solid" placeholder="Solid style...">
+                            </div>
+                            <div class="form-group-demo">
+                                <label class="form-label-demo">Select</label>
+                                <select class="form-input-demo">
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                </select>
+                            </div>
+                        </div>
+                        <pre><code class="language-html">&lt;!-- Default Input --&gt;
+&lt;div class="mb-10"&gt;
+    &lt;label class="form-label"&gt;Email&lt;/label&gt;
+    &lt;input type="email" class="form-control" placeholder="name@example.com"&gt;
+&lt;/div&gt;
+
+&lt;!-- Solid Input (Metronic Custom) --&gt;
+&lt;div class="mb-10"&gt;
+    &lt;label class="form-label"&gt;Password&lt;/label&gt;
+    &lt;input type="password" class="form-control form-control-solid" placeholder="Password"&gt;
+&lt;/div&gt;
+
+&lt;!-- Sizes --&gt;
+&lt;input class="form-control form-control-sm" placeholder="Small"&gt;
+&lt;input class="form-control" placeholder="Default"&gt;
+&lt;input class="form-control form-control-lg" placeholder="Large"&gt;
+
+&lt;!-- Textarea --&gt;
+&lt;textarea class="form-control form-control-solid" rows="3"&gt;&lt;/textarea&gt;
+
+&lt;!-- Form Select --&gt;
+&lt;select class="form-select form-select-solid"&gt;
+    &lt;option&gt;Option 1&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;!-- Checkboxes --&gt;
+&lt;div class="form-check form-check-custom form-check-solid"&gt;
+    &lt;input class="form-check-input" type="checkbox" id="check1"&gt;
+    &lt;label class="form-check-label" for="check1"&gt;Check&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;!-- Switch --&gt;
+&lt;div class="form-check form-switch form-check-custom form-check-solid"&gt;
+    &lt;input class="form-check-input" type="checkbox" id="switch1"&gt;
+    &lt;label class="form-check-label" for="switch1"&gt;Switch&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+
+                <div class="info-card mt-lg">
+                    <div class="info-card-header">
+                        <i class="bi bi-sliders"></i>
+                        <h3>Form SASS Variables</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <pre><code class="language-scss">// Default Input Style
+$input-padding-y:     .775rem;
+$input-padding-x:     1rem;
+$input-font-size:     $font-size-base * 1.1;
+$input-font-weight:   500;
+$input-border-color:  var(--bs-gray-300);
+$input-border-radius: .475rem;
+
+// Focus State
+$input-focus-border-color: var(--bs-gray-400);
+$input-focus-box-shadow:   none; // ไม่มี glow
+
+// Solid Style (Metronic Custom)
+$input-solid-color:             var(--bs-gray-700);
+$input-solid-bg:                var(--bs-gray-100);
+$input-solid-bg-focus:          var(--bs-gray-200);
+$input-solid-placeholder-color: var(--bs-gray-500);
+
+// Checkboxes & Switches
+$form-check-input-width:    1.75rem;
+$form-check-input-width-sm: 1.55rem;
+$form-check-input-width-lg: 2.25rem;
+$form-switch-width:    3.25rem;
+$form-switch-height:   2.25rem;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SECTION: TABLES ===================== -->
+            <section class="content-section" id="tables">
+                <div class="section-header">
+                    <h2><i class="bi bi-table"></i> Tables</h2>
+                    <p>Metronic Tables มาพร้อม Loading State, Striped, Hover และ Custom Styling</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="bi bi-table"></i>
+                        <h3>Table Example</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <div class="responsive-table">
+                            <table class="table-demo">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Position</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="table-user">
+                                                <div class="table-avatar">JD</div>
+                                                <div>
+                                                    <div class="table-name">John Doe</div>
+                                                    <div class="table-email">john@email.com</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Developer</td>
+                                        <td><span class="status-badge status-success">Active</span></td>
+                                        <td><button class="btn-demo btn-sm-action">Edit</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="table-user">
+                                                <div class="table-avatar table-avatar-info">AS</div>
+                                                <div>
+                                                    <div class="table-name">Alice Smith</div>
+                                                    <div class="table-email">alice@email.com</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Designer</td>
+                                        <td><span class="status-badge status-warning">Pending</span></td>
+                                        <td><button class="btn-demo btn-sm-action">Edit</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="table-user">
+                                                <div class="table-avatar table-avatar-danger">BJ</div>
+                                                <div>
+                                                    <div class="table-name">Bob Johnson</div>
+                                                    <div class="table-email">bob@email.com</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Manager</td>
+                                        <td><span class="status-badge status-danger">Inactive</span></td>
+                                        <td><button class="btn-demo btn-sm-action">Edit</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <pre><code class="language-html">&lt;!-- Metronic Table --&gt;
+&lt;div class="card"&gt;
+    &lt;div class="card-header"&gt;
+        &lt;h3 class="card-title"&gt;Users Table&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class="card-body"&gt;
+        &lt;table class="table table-row-dashed table-row-gray-300 
+                       align-middle gs-0 gy-4"&gt;
+            &lt;thead&gt;
+                &lt;tr class="fw-bold text-muted"&gt;
+                    &lt;th&gt;Name&lt;/th&gt;
+                    &lt;th&gt;Position&lt;/th&gt;
+                    &lt;th&gt;Status&lt;/th&gt;
+                    &lt;th&gt;Actions&lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;
+                        &lt;div class="d-flex align-items-center"&gt;
+                            &lt;div class="symbol symbol-45px me-5"&gt;
+                                &lt;span class="symbol-label bg-light-primary 
+                                             text-primary fw-bold"&gt;
+                                    JD
+                                &lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div&gt;
+                                &lt;a class="text-gray-800 fw-bold"&gt;John Doe&lt;/a&gt;
+                                &lt;span class="text-muted d-block fs-7"&gt;
+                                    john@email.com
+                                &lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;Developer&lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;span class="badge badge-light-success"&gt;Active&lt;/span&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;a class="btn btn-sm btn-light-primary"&gt;Edit&lt;/a&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Table Utility Classes --&gt;
+&lt;!-- table-row-dashed   = เส้นประ --&gt;
+&lt;!-- table-row-gray-300 = สีเส้น gray-300 --&gt;
+&lt;!-- gs-0               = gutter spacing 0 --&gt;
+&lt;!-- gy-4               = vertical gutter 4 --&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SECTION: BADGES ===================== -->
+            <section class="content-section" id="badges">
+                <div class="section-header">
+                    <h2><i class="bi bi-tag"></i> Badges & Indicators</h2>
+                    <p>Metronic ขยาย Bootstrap Badges ด้วย Light variants, Symbols และ Bullet indicators</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="bi bi-tags"></i>
+                        <h3>Badge Variants</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <div class="badge-demo">
+                            <span class="badge-item badge-primary">Primary</span>
+                            <span class="badge-item badge-success">Success</span>
+                            <span class="badge-item badge-danger">Danger</span>
+                            <span class="badge-item badge-warning">Warning</span>
+                            <span class="badge-item badge-info">Info</span>
+                        </div>
+                        <div class="badge-demo mt-md">
+                            <span class="badge-item badge-light-primary">Light Primary</span>
+                            <span class="badge-item badge-light-success">Light Success</span>
+                            <span class="badge-item badge-light-danger">Light Danger</span>
+                            <span class="badge-item badge-light-warning">Light Warning</span>
+                            <span class="badge-item badge-light-info">Light Info</span>
+                        </div>
+                        <pre><code class="language-html">&lt;!-- Solid Badges --&gt;
+&lt;span class="badge badge-primary"&gt;Primary&lt;/span&gt;
+&lt;span class="badge badge-success"&gt;Success&lt;/span&gt;
+&lt;span class="badge badge-danger"&gt;Danger&lt;/span&gt;
+
+&lt;!-- Light Badges (Metronic Custom) --&gt;
+&lt;span class="badge badge-light-primary"&gt;Light Primary&lt;/span&gt;
+&lt;span class="badge badge-light-success"&gt;Active&lt;/span&gt;
+&lt;span class="badge badge-light-danger"&gt;Rejected&lt;/span&gt;
+
+&lt;!-- Square Badge --&gt;
+&lt;span class="badge badge-primary badge-square"&gt;5&lt;/span&gt;
+
+&lt;!-- Circle Badge --&gt;
+&lt;span class="badge badge-danger badge-circle"&gt;9&lt;/span&gt;
+
+&lt;!-- Symbol Component (Avatar-like) --&gt;
+&lt;div class="symbol symbol-50px"&gt;
+    &lt;span class="symbol-label bg-light-primary text-primary 
+                 fw-bold fs-3"&gt;A&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Bullet Indicator --&gt;
+&lt;span class="bullet bullet-dot bg-success h-10px w-10px"&gt;&lt;/span&gt;
+&lt;span class="bullet bullet-vertical bg-primary h-30px"&gt;&lt;/span&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SECTION: MODALS & DRAWERS ===================== -->
+            <section class="content-section" id="modals">
+                <div class="section-header">
+                    <h2><i class="bi bi-window-stack"></i> Modals & Drawers</h2>
+                    <p>Metronic ใช้ Bootstrap Modals พร้อม Custom Drawer Component สำหรับ Side Panels</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="bi bi-window"></i>
+                        <h3>Modal Example</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <pre><code class="language-html">&lt;!-- Modal Trigger --&gt;
+&lt;button class="btn btn-primary" data-bs-toggle="modal" 
+        data-bs-target="#kt_modal_example"&gt;
+    Open Modal
+&lt;/button&gt;
+
+&lt;!-- Modal Structure --&gt;
+&lt;div class="modal fade" id="kt_modal_example" tabindex="-1"&gt;
+    &lt;div class="modal-dialog modal-dialog-centered mw-650px"&gt;
+        &lt;div class="modal-content"&gt;
+            &lt;div class="modal-header"&gt;
+                &lt;h2 class="fw-bold"&gt;Modal Title&lt;/h2&gt;
+                &lt;div class="btn btn-icon btn-sm btn-active-icon-primary" 
+                     data-bs-dismiss="modal"&gt;
+                    &lt;i class="ki-outline ki-cross fs-1"&gt;&lt;/i&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="modal-body scroll-y mx-5 mx-xl-15 my-7"&gt;
+                &lt;!-- Form content --&gt;
+                &lt;div class="fv-row mb-7"&gt;
+                    &lt;label class="fw-semibold fs-6 mb-2"&gt;Name&lt;/label&gt;
+                    &lt;input type="text" class="form-control form-control-solid"&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="modal-footer flex-center"&gt;
+                &lt;button class="btn btn-light me-3" 
+                        data-bs-dismiss="modal"&gt;Cancel&lt;/button&gt;
+                &lt;button class="btn btn-primary"&gt;Submit&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+
+                <div class="info-card mt-lg">
+                    <div class="info-card-header">
+                        <i class="bi bi-layout-sidebar-reverse"></i>
+                        <h3>Drawer Component (Metronic Custom)</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <pre><code class="language-html">&lt;!-- Drawer Trigger --&gt;
+&lt;button class="btn btn-primary" 
+        data-kt-drawer-toggle="true" 
+        data-kt-drawer-target="#kt_drawer_example"&gt;
+    Open Drawer
+&lt;/button&gt;
+
+&lt;!-- Drawer Panel --&gt;
+&lt;div id="kt_drawer_example" 
+     class="bg-body" 
+     data-kt-drawer="true"
+     data-kt-drawer-activate="true"
+     data-kt-drawer-overlay="true"
+     data-kt-drawer-width="{default:'300px', 'md':'500px'}"
+     data-kt-drawer-direction="end"&gt;
+    
+    &lt;!-- Drawer Header --&gt;
+    &lt;div class="card-header d-flex align-items-center 
+                justify-content-between"&gt;
+        &lt;h3 class="card-title fw-bold"&gt;Drawer Title&lt;/h3&gt;
+        &lt;div class="btn btn-sm btn-icon btn-active-light-primary"
+             data-kt-drawer-dismiss="true"&gt;
+            &lt;i class="ki-outline ki-cross fs-2"&gt;&lt;/i&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Drawer Body --&gt;
+    &lt;div class="card-body"&gt;
+        Drawer content...
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Key Drawer Attributes --&gt;
+&lt;!-- data-kt-drawer-activate = enable/disable --&gt;
+&lt;!-- data-kt-drawer-overlay   = show overlay --&gt;
+&lt;!-- data-kt-drawer-width     = responsive width --&gt;
+&lt;!-- data-kt-drawer-direction = start/end --&gt;
+&lt;!-- data-kt-drawer-toggle    = trigger --&gt;
+&lt;!-- data-kt-drawer-dismiss   = close action --&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SECTION: LAYOUT SYSTEM ===================== -->
+            <section class="content-section" id="layout-system">
+                <div class="section-header">
+                    <h2><i class="bi bi-layout-sidebar-inset"></i> Layout System</h2>
+                    <p>Metronic มีระบบ Layout ที่ประกอบด้วย Sidebar, Header, Toolbar และ Content Area</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="bi bi-grid-1x2"></i>
+                        <h3>Layout Structure</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <div class="layout-diagram">
+                            <div class="layout-sidebar-demo">Sidebar<br><small>kt_app_sidebar</small></div>
+                            <div class="layout-main-demo">
+                                <div class="layout-header-demo">Header <small>kt_app_header</small></div>
+                                <div class="layout-toolbar-demo">Toolbar <small>kt_app_toolbar</small></div>
+                                <div class="layout-content-demo">
+                                    Content Area<br>
+                                    <small>kt_app_content</small>
+                                </div>
+                                <div class="layout-footer-demo">Footer <small>kt_app_footer</small></div>
+                            </div>
+                        </div>
+                        <pre><code class="language-html">&lt;!-- Metronic Layout Structure --&gt;
+&lt;body id="kt_app_body" data-kt-app-layout="dark-sidebar"&gt;
+    &lt;div class="d-flex flex-column flex-root app-root" id="kt_app_root"&gt;
+        &lt;div class="app-page flex-column flex-column-fluid" id="kt_app_page"&gt;
+            
+            &lt;!-- Header --&gt;
+            &lt;div id="kt_app_header" class="app-header"&gt;
+                &lt;div class="app-container container-fluid"&gt;
+                    &lt;!-- Logo + Menu + User --&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="app-wrapper flex-column flex-row-fluid"&gt;
+                
+                &lt;!-- Sidebar --&gt;
+                &lt;div id="kt_app_sidebar" class="app-sidebar flex-column"
+                     data-kt-drawer="true"
+                     data-kt-drawer-activate="{default: true, lg: false}"&gt;
+                    &lt;div class="app-sidebar-menu"&gt;
+                        &lt;div class="menu menu-column menu-rounded"&gt;
+                            &lt;!-- Menu Items --&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class="app-main flex-column flex-row-fluid"&gt;
+                    &lt;!-- Content --&gt;
+                    &lt;div id="kt_app_content" class="app-content flex-column-fluid"&gt;
+                        &lt;div class="app-container container-xxl"&gt;
+                            &lt;!-- Page Content --&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;!-- Footer --&gt;
+                    &lt;div id="kt_app_footer" class="app-footer"&gt;
+                        &lt;!-- Footer Content --&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;</code></pre>
+                    </div>
+                </div>
+
+                <div class="info-card mt-lg">
+                    <div class="info-card-header">
+                        <i class="bi bi-sliders"></i>
+                        <h3>Layout SASS Variables</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <pre><code class="language-scss">// layout/_root.scss - Layout Configuration
+
+// Sidebar
+$app-sidebar-base-width: 265px;
+$app-sidebar-base-bg-color: $coal-300;     // #111217
+$app-sidebar-base-bg-color-mobile: $coal-300;
+
+// Sidebar minimize
+$app-sidebar-minimize-width: 75px;
+
+// Header
+$app-header-base-height: 70px;
+$app-header-base-bg-color: $white;
+$app-header-base-box-shadow: 0px 10px 30px 0px rgba(82,63,105,0.05);
+
+// Toolbar
+$app-toolbar-base-height: 55px;
+
+// Content
+$app-content-padding-y: 30px;
+$app-content-padding-x: 0;
+
+// Footer
+$app-footer-height: 60px;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SECTION: SIDEBAR & NAV ===================== -->
+            <section class="content-section" id="sidebar-nav">
+                <div class="section-header">
+                    <h2><i class="bi bi-list"></i> Sidebar & Navigation</h2>
+                    <p>Metronic Menu System รองรับ Accordion, Dropdown, Submenu และ Minimize Mode</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="bi bi-menu-button-wide"></i>
+                        <h3>Menu Component</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <pre><code class="language-html">&lt;!-- Metronic Menu System --&gt;
+&lt;div class="menu menu-column menu-rounded menu-sub-indention 
+            menu-state-bg menu-state-primary"
+     data-kt-menu="true"&gt;
+    
+    &lt;!-- Section Heading --&gt;
+    &lt;div class="menu-item pt-5"&gt;
+        &lt;div class="menu-content"&gt;
+            &lt;span class="menu-heading fw-bold text-uppercase fs-7"&gt;
+                Dashboard
+            &lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Simple Link --&gt;
+    &lt;div class="menu-item"&gt;
+        &lt;a class="menu-link active" href="index.html"&gt;
+            &lt;span class="menu-icon"&gt;
+                &lt;i class="ki-outline ki-element-11 fs-2"&gt;&lt;/i&gt;
+            &lt;/span&gt;
+            &lt;span class="menu-title"&gt;Default&lt;/span&gt;
+            &lt;span class="menu-badge"&gt;
+                &lt;span class="badge badge-light-primary"&gt;New&lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Accordion Submenu --&gt;
+    &lt;div class="menu-item menu-accordion" data-kt-menu-trigger="click"&gt;
+        &lt;span class="menu-link"&gt;
+            &lt;span class="menu-icon"&gt;
+                &lt;i class="ki-outline ki-people fs-2"&gt;&lt;/i&gt;
+            &lt;/span&gt;
+            &lt;span class="menu-title"&gt;User Management&lt;/span&gt;
+            &lt;span class="menu-arrow"&gt;&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;div class="menu-sub menu-sub-accordion"&gt;
+            &lt;div class="menu-item"&gt;
+                &lt;a class="menu-link" href="users-list.html"&gt;
+                    &lt;span class="menu-bullet"&gt;
+                        &lt;span class="bullet bullet-dot"&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;span class="menu-title"&gt;Users List&lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Key Menu Classes --&gt;
+&lt;!-- menu-column         = vertical layout --&gt;
+&lt;!-- menu-rounded        = rounded items --&gt;
+&lt;!-- menu-sub-indention  = indent submenus --&gt;
+&lt;!-- menu-state-bg       = background on hover --&gt;
+&lt;!-- menu-state-primary  = primary color state --&gt;
+&lt;!-- menu-accordion      = collapsible --&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SECTION: HEADER & TOOLBAR ===================== -->
+            <section class="content-section" id="header-toolbar">
+                <div class="section-header">
+                    <h2><i class="bi bi-window"></i> Header & Toolbar</h2>
+                    <p>Header มี Page Title, Breadcrumb, Search, Notifications และ User Profile</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="bi bi-window-dock"></i>
+                        <h3>Page Title & Breadcrumb</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <pre><code class="language-html">&lt;!-- Page Title with Breadcrumb --&gt;
+&lt;div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6"&gt;
+    &lt;div class="app-container container-xxl d-flex 
+                flex-stack flex-wrap"&gt;
+        &lt;div class="page-title d-flex flex-column 
+                    justify-content-center flex-wrap me-3"&gt;
+            &lt;!-- Page Title --&gt;
+            &lt;h1 class="page-heading d-flex text-gray-900 fw-bold 
+                       fs-3 flex-column justify-content-center my-0"&gt;
+                Dashboard
+            &lt;/h1&gt;
+            &lt;!-- Breadcrumb --&gt;
+            &lt;ul class="breadcrumb breadcrumb-separatorless fw-semibold 
+                       fs-7 my-0 pt-1"&gt;
+                &lt;li class="breadcrumb-item text-muted"&gt;
+                    &lt;a href="index.html" class="text-muted 
+                       text-hover-primary"&gt;Home&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class="breadcrumb-item"&gt;
+                    &lt;span class="bullet bg-gray-500 w-5px h-2px"&gt;&lt;/span&gt;
+                &lt;/li&gt;
+                &lt;li class="breadcrumb-item text-muted"&gt;Dashboard&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;!-- Toolbar Actions --&gt;
+        &lt;div class="d-flex align-items-center gap-2"&gt;
+            &lt;button class="btn btn-sm btn-light"&gt;Filter&lt;/button&gt;
+            &lt;button class="btn btn-sm btn-primary"&gt;Create&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Breadcrumb separator style (Metronic uses bullet) --&gt;
+&lt;!-- breadcrumb-separatorless  = ไม่ใช้ / แต่ใช้ bullet --&gt;
+&lt;!-- breadcrumb-dot            = ใช้จุดแยก --&gt;
+&lt;!-- breadcrumb-line           = ใช้เส้นแยก --&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SECTION: WIDGETS ===================== -->
+            <section class="content-section" id="widgets">
+                <div class="section-header">
+                    <h2><i class="bi bi-speedometer2"></i> Widgets & Charts</h2>
+                    <p>Metronic มี Widget ที่หลากหลาย: Statistics, Charts, Lists, Tables, Feeds และ Mixed</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="bi bi-bar-chart-line"></i>
+                        <h3>Widget Categories (6 กลุ่ม)</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <div class="widget-categories">
+                            <div class="widget-cat">
+                                <div class="widget-cat-icon"><i class="bi bi-graph-up"></i></div>
+                                <div class="widget-cat-name">Statistics</div>
+                                <div class="widget-cat-desc">KPI cards, counters, progress</div>
+                            </div>
+                            <div class="widget-cat">
+                                <div class="widget-cat-icon"><i class="bi bi-pie-chart"></i></div>
+                                <div class="widget-cat-name">Charts</div>
+                                <div class="widget-cat-desc">ApexCharts, amCharts integration</div>
+                            </div>
+                            <div class="widget-cat">
+                                <div class="widget-cat-icon"><i class="bi bi-list-ul"></i></div>
+                                <div class="widget-cat-name">Lists</div>
+                                <div class="widget-cat-desc">Activity, notifications, tasks</div>
+                            </div>
+                            <div class="widget-cat">
+                                <div class="widget-cat-icon"><i class="bi bi-table"></i></div>
+                                <div class="widget-cat-name">Tables</div>
+                                <div class="widget-cat-desc">Data tables, user lists</div>
+                            </div>
+                            <div class="widget-cat">
+                                <div class="widget-cat-icon"><i class="bi bi-chat-dots"></i></div>
+                                <div class="widget-cat-name">Feeds</div>
+                                <div class="widget-cat-desc">Social feeds, timeline</div>
+                            </div>
+                            <div class="widget-cat">
+                                <div class="widget-cat-icon"><i class="bi bi-layers"></i></div>
+                                <div class="widget-cat-name">Mixed</div>
+                                <div class="widget-cat-desc">Combined widget patterns</div>
+                            </div>
+                        </div>
+                        <pre><code class="language-html">&lt;!-- Statistics Widget Example --&gt;
+&lt;div class="card card-flush h-lg-100"&gt;
+    &lt;div class="card-header pt-5"&gt;
+        &lt;h3 class="card-title align-items-start flex-column"&gt;
+            &lt;span class="card-label fw-bold text-gray-900"&gt;
+                Total Revenue
+            &lt;/span&gt;
+            &lt;span class="text-gray-500 mt-1 fw-semibold fs-6"&gt;
+                Last 30 days
+            &lt;/span&gt;
+        &lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class="card-body d-flex align-items-end pt-0"&gt;
+        &lt;div class="d-flex align-items-center flex-column 
+                    mt-3 w-100"&gt;
+            &lt;div class="d-flex justify-content-between 
+                        fw-bold fs-6 w-100 mt-auto mb-2"&gt;
+                &lt;span class="text-gray-500"&gt;$5,200&lt;/span&gt;
+                &lt;span class="text-gray-500"&gt;78%&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="h-8px mx-3 w-100 bg-light-success rounded"&gt;
+                &lt;div class="bg-success rounded h-8px" 
+                     style="width: 78%"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Chart Widget with ApexCharts --&gt;
+&lt;div class="card card-flush h-lg-100"&gt;
+    &lt;div class="card-header"&gt;
+        &lt;h3 class="card-title"&gt;Sales Overview&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class="card-body pt-0"&gt;
+        &lt;div id="chart_widget" style="height: 350px"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+// ApexCharts Integration
+var options = {
+    chart: { type: 'area', height: 350 },
+    series: [{ name: 'Sales', data: [30, 40, 35, 50, 49, 60, 70] }],
+    colors: ['#1B84FF'], // Metronic Primary
+    xaxis: { categories: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'] }
+};
+var chart = new ApexCharts(
+    document.querySelector("#chart_widget"), options
+);
+chart.render();
+&lt;/script&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SECTION: DARK MODE ===================== -->
+            <section class="content-section" id="dark-mode">
+                <div class="section-header">
+                    <h2><i class="bi bi-moon-stars"></i> Dark Mode</h2>
+                    <p>Metronic ใช้ Bootstrap 5.3 CSS Variables + <code>data-bs-theme</code> สำหรับ Dark Mode</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="bi bi-circle-half"></i>
+                        <h3>Dark Mode Implementation</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <pre><code class="language-html">&lt;!-- Enable Dark Mode --&gt;
+&lt;html data-bs-theme="dark"&gt;
+
+&lt;!-- Toggle via JavaScript --&gt;
+&lt;script&gt;
+// Get current theme
+const currentTheme = document.documentElement
+    .getAttribute('data-bs-theme');
+
+// Toggle theme
+function toggleTheme() {
+    const html = document.documentElement;
+    const current = html.getAttribute('data-bs-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-bs-theme', next);
+    localStorage.setItem('theme', next);
+}
+
+// Load saved theme
+const saved = localStorage.getItem('theme');
+if (saved) {
+    document.documentElement
+        .setAttribute('data-bs-theme', saved);
+}
+&lt;/script&gt;</code></pre>
+                    </div>
+                </div>
+
+                <div class="info-card mt-lg">
+                    <div class="info-card-header">
+                        <i class="bi bi-filetype-scss"></i>
+                        <h3>Dark Mode SASS Variables</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <pre><code class="language-scss">// _variables-dark.scss - Dark Mode Overrides
+
+// Dark mode grey scale
+$grays-dark: (
+    "100": #1b1c22,
+    "200": #26272f,
+    "300": #363843,
+    "400": #464852,
+    "500": #636674,
+    "600": #808290,
+    "700": #9a9cae,
+    "800": #b5b7c8,
+    "900": #f5f5f5
+);
+
+// Dark mode theme colors
+$theme-colors-dark: (
+    "primary":   #1B84FF,
+    "secondary": #363843,
+    "light":     #1b1c22,
+    "success":   #17C653,
+    "info":      #7239EA,
+    "warning":   #F6C000,
+    "danger":    #F8285A,
+    "dark":      #272A34
+);
+
+// Dark body background
+$body-bg-dark: $coal-300;      // #111217
+$body-color-dark: $gray-900;
+
+// Card dark mode
+$card-box-shadow-dark: none;
+$card-border-color-dark: #26272f;
+
+// _root.scss applies dark mode vars:
+@include color-mode(dark) {
+    @each $name, $value in $grays-dark {
+        --bs-gray-#{$name}: #{$value};
+    }
+    @each $name, $value in $theme-colors-dark {
+        --bs-#{$name}: #{$value};
+    }
+    // ... components, shadows, etc.
+}</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SECTION: UTILITIES ===================== -->
+            <section class="content-section" id="utilities">
+                <div class="section-header">
+                    <h2><i class="bi bi-tools"></i> Utilities & Helpers</h2>
+                    <p>Metronic ขยาย Bootstrap Utilities พร้อม Custom Helpers อีกมากมาย</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="bi bi-magic"></i>
+                        <h3>Extended Utility Classes</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <pre><code class="language-html">&lt;!-- Opacity Utilities --&gt;
+&lt;div class="opacity-0"&gt;0%&lt;/div&gt;
+&lt;div class="opacity-25"&gt;25%&lt;/div&gt;
+&lt;div class="opacity-50"&gt;50%&lt;/div&gt;
+&lt;div class="opacity-75"&gt;75%&lt;/div&gt;
+&lt;div class="opacity-100"&gt;100%&lt;/div&gt;
+
+&lt;!-- Border Radius --&gt;
+&lt;div class="rounded"&gt;Default (.475rem)&lt;/div&gt;
+&lt;div class="rounded-1"&gt;SM (.425rem)&lt;/div&gt;
+&lt;div class="rounded-2"&gt;LG (.625rem)&lt;/div&gt;
+&lt;div class="rounded-3"&gt;XL (1rem)&lt;/div&gt;
+&lt;div class="rounded-4"&gt;2XL (2rem)&lt;/div&gt;
+
+&lt;!-- Shadow Utilities --&gt;
+&lt;div class="shadow-xs"&gt;Extra Small&lt;/div&gt;
+&lt;div class="shadow-sm"&gt;Small&lt;/div&gt;
+&lt;div class="shadow"&gt;Default&lt;/div&gt;
+&lt;div class="shadow-lg"&gt;Large&lt;/div&gt;
+
+&lt;!-- Scrollbar (Metronic Custom) --&gt;
+&lt;div class="scroll-y" data-kt-scroll="true" 
+     data-kt-scroll-height="300px"&gt;
+    Scrollable Content...
+&lt;/div&gt;
+
+&lt;!-- Hover Effects --&gt;
+&lt;div class="bg-hover-primary"&gt;Hover Background&lt;/div&gt;
+&lt;div class="text-hover-primary"&gt;Hover Text&lt;/div&gt;
+&lt;div class="opacity-hover"&gt;Hover Opacity Change&lt;/div&gt;
+
+&lt;!-- Custom Width/Height --&gt;
+&lt;div class="w-100px"&gt;Fixed Width&lt;/div&gt;
+&lt;div class="h-100px"&gt;Fixed Height&lt;/div&gt;
+&lt;div class="min-w-200px"&gt;Min Width&lt;/div&gt;
+&lt;div class="max-h-300px"&gt;Max Height&lt;/div&gt;
+
+&lt;!-- Z-Index --&gt;
+&lt;div class="z-index-1"&gt;z-index: 1&lt;/div&gt;
+&lt;div class="z-index-2"&gt;z-index: 2&lt;/div&gt;
+&lt;div class="z-index-3"&gt;z-index: 3&lt;/div&gt;
+
+&lt;!-- Flex Shorthand --&gt;
+&lt;div class="d-flex flex-stack"&gt;
+    &lt;!-- justify-content: space-between + align-items: center --&gt;
+    &lt;span&gt;Left&lt;/span&gt;
+    &lt;span&gt;Right&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class="d-flex flex-center"&gt;
+    &lt;!-- justify-content: center + align-items: center --&gt;
+    &lt;span&gt;Centered&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+
+                <div class="info-card mt-lg">
+                    <div class="info-card-header">
+                        <i class="bi bi-code-square"></i>
+                        <h3>Custom Animation Classes</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <pre><code class="language-scss">// _animation.scss
+.animation-blink {
+    animation: blink 1s steps(5, start) infinite;
+}
+
+.animation-shake {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.animation-pulse {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+    to { visibility: hidden; }
+}
+
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
+}</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SECTION: SASS STRUCTURE ===================== -->
+            <section class="content-section" id="sass-structure">
+                <div class="section-header">
+                    <h2><i class="bi bi-filetype-scss"></i> SASS Structure</h2>
+                    <p>โครงสร้างไฟล์ SASS ของ Metronic และวิธีการ Customize</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="bi bi-folder2"></i>
+                        <h3>SASS File Organization (68+ Components)</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <pre><code class="language-plaintext">src/sass/
+├── style.scss                    # Entry point
+├── _init.scss                    # Initialization
+├── plugins.scss                  # Third-party plugins
+│
+├── base/                         # Base functions & mixins
+│   ├── _functions.scss
+│   └── _mixins.scss
+│
+├── components/                   # Core Components (68 files)
+│   ├── _variables.scss           # 1,274 lines! Master variables
+│   ├── _variables.custom.scss    # Your custom overrides
+│   ├── _variables.override.scss  # Variable overrides
+│   ├── _variables-dark.scss      # Dark mode variables
+│   ├── _root.scss                # CSS Custom Properties
+│   │
+│   ├── _card.scss                # Cards
+│   ├── _buttons.scss             # Buttons
+│   ├── _forms.scss               # Forms
+│   ├── _tables.scss              # Tables
+│   ├── _badge.scss               # Badges
+│   ├── _modal.scss               # Modals
+│   ├── _dropdown.scss            # Dropdowns
+│   ├── _accordion.scss           # Accordion
+│   ├── _pagination.scss          # Pagination
+│   ├── _breadcrumb.scss          # Breadcrumbs
+│   ├── _nav.scss                 # Navigation
+│   ├── _nav-line-tabs.scss       # Line Tab Navigation
+│   ├── _nav-pills-custom.scss    # Custom Nav Pills
+│   ├── _tooltip.scss             # Tooltips
+│   ├── _popover.scss             # Popovers
+│   ├── _toasts.scss              # Toasts
+│   ├── _progress.scss            # Progress Bars
+│   ├── _alert.scss               # Alerts
+│   │
+│   ├── _drawer.scss              # Drawer (Custom)
+│   ├── _scroll.scss              # Scrollbar (Custom)
+│   ├── _scrolltop.scss           # Scroll to Top (Custom)
+│   ├── _symbol.scss              # Symbol/Avatar (Custom)
+│   ├── _bullet.scss              # Bullet (Custom)
+│   ├── _rating.scss              # Rating (Custom)
+│   ├── _ribbon.scss              # Ribbon (Custom)
+│   ├── _timeline.scss            # Timeline (Custom)
+│   ├── _carousel.scss            # Carousel
+│   ├── _overlay.scss             # Overlay
+│   ├── _image-input.scss         # Image Input
+│   ├── _separator.scss           # Separator
+│   ├── _pulse.scss               # Pulse Animation
+│   ├── _rotate.scss              # Rotate Helpers
+│   ├── _engage.scss              # Engage Panel
+│   ├── _theme-mode.scss          # Theme Mode Toggle
+│   ├── _animation.scss           # Animations
+│   ├── _hover.scss               # Hover Effects
+│   ├── _code.scss                # Code Blocks
+│   ├── _tree.scss                # Tree View
+│   └── _utilities.scss           # Extended Utilities
+│
+├── layout/                       # Layout System
+│   ├── _base.scss
+│   ├── _aside.scss
+│   ├── _content.scss
+│   ├── _toolbar.scss
+│   ├── _root.scss
+│   ├── header/
+│   └── sidebar/
+│
+└── vendors/                      # Vendor Overrides</code></pre>
+                    </div>
+                </div>
+
+                <div class="info-card mt-lg">
+                    <div class="info-card-header">
+                        <i class="bi bi-gear"></i>
+                        <h3>วิธี Customize ผ่าน Variables</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <pre><code class="language-scss">// _variables.custom.scss
+// ================================
+// ใส่ Custom Variables ที่นี่
+// ไฟล์นี้ load AFTER _variables.scss
+// ดังนั้นจะ override ค่า default ได้
+// ================================
+
+// เปลี่ยนสี Primary
+$primary: #6366F1;
+$primary-active: #4F46E5;
+$primary-light: #EEF2FF;
+$primary-clarity: rgba(#6366F1, 0.2);
+
+// เปลี่ยน Font
+$font-family-sans-serif: "Outfit", sans-serif;
+
+// เปลี่ยน Border Radius
+$border-radius: 0.75rem;
+$border-radius-lg: 1rem;
+
+// เปลี่ยน Card Style
+$card-border-enabled: true;
+$card-box-shadow: none;
+
+// เปลี่ยน Sidebar Width
+$app-sidebar-base-width: 280px;
+
+// _variables.override.scss  
+// ================================
+// Override Bootstrap variables
+// ที่ต้อง override ก่อน compile
+// ================================
+$enable-rounded: true;
+$enable-shadows: true;
+$enable-negative-margins: true;</code></pre>
+                    </div>
+                </div>
+
+                <div class="info-card mt-lg">
+                    <div class="info-card-header">
+                        <i class="bi bi-terminal"></i>
+                        <h3>Build & Compile</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <pre><code class="language-bash"># ติดตั้ง dependencies
+npm install
+
+# Compile SASS → CSS
+npm run build
+
+# Watch mode (auto-compile on save)
+npm run watch
+
+# Output: assets/css/style.bundle.css
+# ขนาดไฟล์: ~1.38 MB (unminified)</code></pre>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="footer-left">
+                <span>&copy; 2026 Metronic UI Reference</span>
+                <span class="footer-divider">|</span>
+                <span>Built with Metronic Design System</span>
+            </div>
+            <div class="footer-right">
+                <span>Metronic v8.3.1 by <a href="https://keenthemes.com" target="_blank" rel="noopener">Keenthemes</a></span>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop" title="กลับด้านบน">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/scss.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/bash.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
